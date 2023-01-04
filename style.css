@@ -1,0 +1,40 @@
+#game {
+  width: 100vw;
+  height: 94vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clicker {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 10rem;
+  background-color: rgb(255, 0, 0);
+  box-shadow: 0 0 2em 0 black;
+  transition: all 1s ease;
+}
+
+.clicker:hover {
+  background-color: rgb(182, 0, 0);
+  color: white;
+  box-shadow: 0 0 2em 1em black;
+}
+
+.clicker:active {
+  transition: all 0.6s ease;
+  background-color: rgb(177, 238, 63);
+}
+
+.myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+.myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
