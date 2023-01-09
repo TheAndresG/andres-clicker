@@ -16,7 +16,7 @@ let hold = false;
 
 //barra de tiempo
 const barCont = document.createElement("div");
-let dayCount = 1;
+let dayCount = localStorage.getItem("days") ? localStorage.getItem("days") : 1;
 const barText = document.createElement("p");
 barText.textContent = `Day ${dayCount}`;
 barCont.style.width = "40%";
@@ -33,11 +33,14 @@ barCont.appendChild(myProgress_div);
 function moveBar() {
   var elem = document.querySelector(".myBar");
   var width = 1;
-  setInterval(frame, 100);
+  setInterval(frame, 1000);
   function frame() {
     if (width >= 100) {
       width = 1;
       dayCount++;
+      localStorage.setItem("count", counter);
+      localStorage.setItem("days", dayCount);
+
       barText.textContent = `Day ${dayCount}`;
     } else {
       width++;
@@ -76,7 +79,6 @@ function createBtn() {
   setInterval(() => {
     if (actualCounter !== counter) {
       counter_div.innerHTML = counter;
-      localStorage.setItem("count", counter);
       actualCounter = counter;
     } else null;
   }, 30);
